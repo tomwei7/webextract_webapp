@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import math
-import matplotlib.pyplot as plt
 
 
 class KMeans(object):
@@ -18,12 +17,7 @@ class KMeans(object):
         self._ktext_list = []
         self._kother_list = []
 
-    def _init_plot(self):
-        fig, axes = plt.subplots(self.row, self.col)
-        self._axl = axes.flat
-
-    def run(self, sample_list, show=False):
-        show and self._init_plot()
+    def run(self, sample_list):
         self._sample_list = sample_list
         self.init()
         for i in range(self.time):
@@ -37,8 +31,6 @@ class KMeans(object):
                 else:
                     self._kother_list.append(dot)
             self._kupdate()
-            show and self._draw(i)
-        show and self._show()
 
     def get_res(self):
         res = {}
@@ -76,18 +68,3 @@ class KMeans(object):
     def _get_distance(self, dot0, dot1):
         return math.sqrt(math.pow(dot0[0] - dot1[0], 2) +
                          math.pow(dot0[1] - dot1[1], 2))
-
-    def _draw(self, time):
-        ax = self._axl[time]
-        xtext = [i[0] for i in self._ktext_list]
-        ytext = [i[1] for i in self._ktext_list]
-        xother = [i[0] for i in self._kother_list]
-        yother = [i[1] for i in self._kother_list]
-        ax.plot(xtext, ytext, 'gs', alpha=0.75)
-        ax.plot(xother, yother, 'yo', alpha=0.75)
-        ax.plot([self._ktext[0]], [self._ktext[1]], 'r^')
-        ax.plot([self._kother[0]], [self._ktext[1]], 'b^')
-        ax.set_title('%sth' % (time+1))
-
-    def _show(self):
-        plt.show()
