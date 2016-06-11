@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>正文提取</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='extract.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+        </div>
+        <div class="form-cent">
+            <form action="/extract">
+                <div class="row">
+                    <input class="url-ipt" type="text" name="url" id="url" placeholder="需要提取的网页地址">
+                    <button class="url-btn" type="submit">提取</button>
+                </div>
+                <div class="row url-option">
+                    <input type="radio" name="show_type" value="text" checked>纯文本
+                    <input type="radio" name="show_type" value="html">富文本(测试功能)
+                </div>
+            </form>
+        </div>
+        <div class="res-cent">
+        <h3>正文内容：</h3>
+        <div class="main-res">
+            {% if body_text %}
+            {{ body_text|safe }}
+            {% endif %}
+        </div>
+        </div>
+        <div class="footer text-center">
+            <p>Copyright 2016 tomwei7.com</p>
+        </div>
+    </div>
+</body>
+</html>

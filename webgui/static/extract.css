@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+.container {
+}
+.header {
+    height: 20px;
+}
+.form-cent{
+    margin: 0 15px;
+}
+.form-cent .url-ipt {
+    width: 520px;
+    height: 28px;
+}
+.form-cent .url-btn {
+    width: 100px;
+    height: 32px;
+}
+.text-center {
+    text-align: center;
+}
+.url-option {
+    margin-top: 10px;
+    font-size: 10px;
+}
+.res-cent {
+    margin: 0 15px;
+}
+.main-res {
+    padding: 10px;
+    border: 1px #666 dashed;
+    background: #efefef;
+}
+.footer {
+    margin: 10px 15px 0 15px;
+    border-top: 1px solid #ececec;
+    font-size: 10px;
+}
