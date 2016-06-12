@@ -32,7 +32,6 @@ class HtmlProcess(object):
         else:
             self._encoding = "utf-8"
             self._content = content.decode(self._encoding, 'ignore')
-        print(result)
 
     def _clear_html(self):
         text = self.clear_reg.sub('', self._fhtml)
