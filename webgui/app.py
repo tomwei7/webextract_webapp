@@ -26,4 +26,4 @@ def extracthtml():
         body_text = extract(url, show_type=show_type)
         if show_type == "text":
             body_text = body_text.replace('\n', "<br>")
-        return render_template("extract.phtml", body_text=body_text)
+        return render_template("extract.phtml", body_text=body_text, url=url)

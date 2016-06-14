@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <title>正文提取</title>
     <link rel="stylesheet" href="{{url_for('static', filename='extract.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='pure-min.css')}}">
 </head>
 <body>
     <div class="container">
         <div class="header">
         </div>
         <div class="form-cent">
-            <form action="/extract">
+            <form action="/extract" class="pure-form">
                 <div class="row">
-                    <input class="url-ipt" type="text" name="url" id="url" placeholder="需要提取的网页地址">
-                    <button class="url-btn" type="submit">提取</button>
+                    <input class="url-ipt" type="text" name="url" id="url" placeholder="需要提取的网页地址" value="{{ url }}">
+                    <button class="url-btn pure-button-primary pure-button" type="submit">提取</button>
                 </div>
                 <div class="row url-option">
                     <input type="radio" name="show_type" value="text" checked>纯文本
